@@ -16,7 +16,14 @@ A fun and interactive memory card game built with React. Test your memory by mat
 
 ![Game Preview](./src/assets//game-preview.png)
 ![Game Win](./src/assets//game-win.png)
-![Time Up](./src/assets//game-time-up.png.png)
+![Time Up](./src/assets//game-time-up.png)
+
+## 🎥 Demo Video
+
+Check out the demo of the Emoji Memory Game:
+
+[![Watch the video](./src//assets/emoji-memory-game.webm)]
+
 
 ## 🛠️ Technologies Used
 
