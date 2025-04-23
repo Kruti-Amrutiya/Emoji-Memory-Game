@@ -1,0 +1,230 @@
+/* Root Styling */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.game-container {
+  text-align: center;
+  margin-top: 50px;
+  font-family: 'Arial', sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #555;
+}
+
+h2 {
+  font-size: 2rem;
+  color: green;
+  font-weight: bold;
+}
+
+/* Grid Layout */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 120px);
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+/* Card Styling */
+.card {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 32px;
+  transition: transform 0.5s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.card.flipped {
+  background-color: #ffcc00;
+  transform: rotateY(180deg);
+}
+
+.card:not(.flipped):hover {
+  transform: scale(1.1);
+}
+
+/* Faces */
+.card .front,
+.card .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .front {
+  background-color: #f2f2f2;
+}
+
+.card .back {
+  background-color: #ffcc00;
+  transform: rotateY(180deg);
+}
+
+/* Difficulty Buttons */
+.difficulty-buttons {
+  margin-top: 20px;
+}
+
+.difficulty-button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #3c5a3d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.difficulty-button:hover {
+  background-color: #2f4931;
+}
+
+/* Button */
+.restart-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #3c5a3d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 100px);
+    gap: 15px;
+  }
+
+  .card {
+    width: 100px;
+    height: 100px;
+    font-size: 24px;
+  }
+}
+
+.confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.win-text {
+  font-size: 2.5rem;
+  color: #4caf50;
+  margin-top: 30px;
+  font-weight: bold;
+  animation: bounce-in 1.2s ease-out, glow-pulse 2s infinite alternate;
+  text-shadow: 0 0 10px rgba(76, 175, 80, 0.7), 0 0 20px rgba(76, 175, 80, 0.5);
+}
+
+/* Bounce Entrance */
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-200px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.05) translateY(30px);
+  }
+
+  80% {
+    transform: scale(0.95) translateY(-10px);
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Soft Glow Pulse */
+@keyframes glow-pulse {
+  from {
+    text-shadow: 0 0 8px rgba(76, 175, 80, 0.5), 0 0 16px rgba(76, 175, 80, 0.3);
+  }
+
+  to {
+    text-shadow: 0 0 16px rgba(76, 175, 80, 0.9), 0 0 32px rgba(76, 175, 80, 0.6);
+  }
+}
+
+.difficulty-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.difficulty-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  border: 2px solid #3c5a3d;
+  border-radius: 0.5rem;
+  background-color: white;
+  color: #3c5a3d;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.difficulty-btn:hover {
+  background-color: #e1f3e1;
+  border: 2px solid #3c5a3d;
+}
+
+.difficulty-btn.selected {
+  background-color: #3c5a3d;
+  border-color: #3c5a3d;
+  color: white;
+}
+
+.difficulty-btn.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lock-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #666;
+}
