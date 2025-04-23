@@ -14,7 +14,9 @@ A fun and interactive memory card game built with React. Test your memory by mat
 
 ## 📸 Screenshots
 
-![Game Screenshot](./Screenshot from 2025-04-23 18-01-30.png) _(Include a screenshot here if available)_
+![Game Preview](./src/assets//game-preview.png)
+![Game Win](./src/assets//game-win.png)
+![Time Up](./src/assets//game-time-up.png.png)
 
 ## 🛠️ Technologies Used
 
