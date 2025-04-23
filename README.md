@@ -2,6 +2,12 @@
 
 A fun and interactive memory card game built with React. Test your memory by matching emoji pairs! 🎯
 
+## 🎮 Demo
+
+Check out the live demo of the game here: [Match Emojis](https://match-emojis.netlify.app/)
+
+Test your memory and have fun matching emoji pairs! 🎯
+
 ## 🚀 Features
 
 - 🃏 Flip cards to find matching emoji pairs
